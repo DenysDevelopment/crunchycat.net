@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>crunchycat.net</title>
+		<link rel="stylesheet" href="./css/style.css" />
+		<link
+			href="https://fonts.googleapis.com/css?family=Abhaya+Libre:400,700&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css?family=Archivo:300,400,700&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<!-- <img src="./images/cursor.png" alt="" class="cursor" /> -->
+		<dialog class="modal" id="modal">
+			<div class="modal__header">
+				<img src="./images/skype.png" alt="" class="modal__icon" />
+				<p class="modal__title">Skype - Crunchycat</p>
+				<div class="modal__control">
+					<svg
+						width="70"
+						height="13"
+						viewBox="0 0 70 13"
+						fill="none"
+						xmlns="http://www.w3.org/2000/svg"
+					>
+						<rect x="46.5" y="0.5" width="23" height="12" stroke="black" />
+						<rect x="46" y="1" width="23" height="2" fill="black" />
+						<rect y="11" width="23" height="2" fill="black" />
+					</svg>
+
+					<button class="modal__close" onclick="closeModal()">
+						<svg
+							width="16"
+							height="16"
+							viewBox="0 0 16 16"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<g clip-path="url(#clip0_1_200)">
+								<path
+									d="M15.854 12.854L11 7.99995L15.854 3.14595C15.947 3.05181 15.9991 2.9248 15.9991 2.79245C15.9991 2.66011 15.947 2.5331 15.854 2.43895L13.561 0.145954C13.5146 0.0994215 13.4595 0.0624998 13.3988 0.0373069C13.3382 0.0121139 13.2731 -0.000854492 13.2075 -0.000854492C13.1418 -0.000854492 13.0767 0.0121139 13.0161 0.0373069C12.9554 0.0624998 12.9003 0.0994215 12.854 0.145954L7.99995 4.99995L3.14595 0.145954C3.05219 0.0522186 2.92504 -0.000439073 2.79245 -0.000439073C2.65987 -0.000439073 2.53272 0.0522186 2.43895 0.145954L0.145954 2.43895C0.0994215 2.48531 0.0624998 2.54041 0.0373069 2.60107C0.0121139 2.66173 -0.000854492 2.72677 -0.000854492 2.79245C-0.000854492 2.85814 0.0121139 2.92318 0.0373069 2.98384C0.0624998 3.0445 0.0994215 3.09959 0.145954 3.14595L4.99995 7.99995L0.145954 12.854C0.0522186 12.9477 -0.000439073 13.0749 -0.000439073 13.2075C-0.000439073 13.34 0.0522186 13.4672 0.145954 13.561L2.43895 15.854C2.48531 15.9005 2.54041 15.9374 2.60107 15.9626C2.66173 15.9878 2.72677 16.0008 2.79245 16.0008C2.85814 16.0008 2.92318 15.9878 2.98384 15.9626C3.0445 15.9374 3.09959 15.9005 3.14595 15.854L7.99995 11L12.854 15.854C12.9477 15.9477 13.0749 16.0003 13.2075 16.0003C13.34 16.0003 13.4672 15.9477 13.561 15.854L15.854 13.561C15.9005 13.5146 15.9374 13.4595 15.9626 13.3988C15.9878 13.3382 16.0008 13.2731 16.0008 13.2075C16.0008 13.1418 15.9878 13.0767 15.9626 13.0161C15.9374 12.9554 15.9005 12.9003 15.854 12.854Z"
+									fill="white"
+								/>
+							</g>
+							<defs>
+								<clipPath id="clip0_1_200">
+									<rect width="16" height="16" fill="white" />
+								</clipPath>
+							</defs>
+						</svg>
+					</button>
+				</div>
+			</div>
+			<div class="modal__content">
+				<img class="modal__avatar" src="./images/avatar-skype.png" />
+				<p class="modal__name">Crunchycat</p>
+				<p class="modal__incoming">Incoming call...</p>
+				<div class="modal__btns">
+					<button class="modal__end modal--accept">
+						<img src="./images/end.png" alt="" />
+					</button>
+					<button class="modal__accept modal--accept">
+						<img src="./images/accept.png" alt="" />
+					</button>
+					<button class="modal__video modal--accept">
+						<img src="./images/video.png" alt="" />
+					</button>
+				</div>
+			</div>
+			<div class="modal__accepted accepted-modal">
+				<div class="accepted-modal__header">
+					<div class="accepted-modal__left">
+						<p class="accepted-modal__name">Crunchycat</p>
+						<p class="accepted-modal__time">00:00</p>
+					</div>
+					<div class="accepted-modal__right">
+						<svg
+							width="16"
+							height="18"
+							viewBox="0 0 16 18"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M14.9612 0.956402C14.9371 0.681311 14.6946 0.477815 14.4195 0.501883L9.93662 0.894084C9.66153 0.918151 9.45803 1.16067 9.4821 1.43576C9.50617 1.71085 9.74868 1.91435 10.0238 1.89028L14.0086 1.54166L14.3572 5.52643C14.3812 5.80153 14.6238 6.00502 14.8989 5.98095C15.1739 5.95689 15.3774 5.71437 15.3534 5.43928L14.9612 0.956402ZM8.91989 8.38395L14.8461 1.32137L14.0801 0.678587L8.15384 7.74117L8.91989 8.38395Z"
+								fill="white"
+							/>
+							<path
+								d="M1.04358 17.5294C0.768486 17.5535 0.52597 17.35 0.501903 17.0749L0.109702 12.592C0.0856345 12.3169 0.28913 12.0744 0.564221 12.0503C0.839313 12.0263 1.08183 12.2298 1.1059 12.5049L1.45452 16.4896L5.4393 16.141C5.71439 16.1169 5.95691 16.3204 5.98097 16.5955C6.00504 16.8706 5.80155 17.1131 5.52645 17.1372L1.04358 17.5294ZM7.30923 10.2901L1.38302 17.3527L0.616978 16.7099L6.54319 9.64734L7.30923 10.2901Z"
+								fill="white"
+							/>
+						</svg>
+					</div>
+				</div>
+				<div class="accepted-modal__content">
+					<div class="accepted-modal__menu">
+						<svg
+							width="33"
+							height="21"
+							viewBox="0 0 33 21"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								d="M6 1.5H31"
+								stroke="white"
+								stroke-width="3"
+								stroke-linecap="round"
+							/>
+							<path
+								d="M6 10.5H26"
+								stroke="white"
+								stroke-width="3"
+								stroke-linecap="round"
+							/>
+							<path
+								d="M6 19.5H22"
+								stroke="white"
+								stroke-width="3"
+								stroke-linecap="round"
+							/>
+							<circle cx="1.5" cy="1.5" r="1.5" fill="#FEFEFE" />
+							<circle cx="1.5" cy="1.5" r="1.5" fill="#FEFEFE" />
+							<circle cx="1.5" cy="1.5" r="1.5" fill="#FEFEFE" />
+							<circle cx="1.5" cy="10.5" r="1.5" fill="#FEFEFE" />
+							<circle cx="1.5" cy="10.5" r="1.5" fill="#FEFEFE" />
+							<circle cx="1.5" cy="10.5" r="1.5" fill="#FEFEFE" />
+							<circle cx="1.5" cy="19.5" r="1.5" fill="#FEFEFE" />
+							<circle cx="1.5" cy="19.5" r="1.5" fill="#FEFEFE" />
+							<circle cx="1.5" cy="19.5" r="1.5" fill="#FEFEFE" />
+						</svg>
+					</div>
+					<div class="accepted-modal__sms">
+						<svg
+							width="32"
+							height="32"
+							viewBox="0 0 32 32"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+						>
+							<path
+								fill-rule="evenodd"
+								clip-rule="evenodd"
+								d="M21.3306 6.07066C17.7354 5.79974 14.1243 5.81758 10.532 6.124L8.36663 6.308C7.57226 6.37593 6.82379 6.70894 6.24149 7.25352C5.65919 7.79809 5.27687 8.52261 5.15596 9.31066L5.01996 10.2027C4.55642 13.2265 4.59968 16.3064 5.14796 19.316C5.27907 20.0355 5.65848 20.6863 6.22009 21.1548C6.7817 21.6233 7.4899 21.88 8.22129 21.88H20.1893C20.4653 21.88 20.736 21.948 20.9786 22.0787L26.1933 24.8813C26.3457 24.9632 26.5167 25.0042 26.6896 25.0002C26.8626 24.9962 27.0315 24.9474 27.18 24.8586C27.3284 24.7698 27.4513 24.644 27.5366 24.4935C27.6219 24.343 27.6667 24.173 27.6666 24V12.644C27.6663 10.9865 27.0398 9.39033 25.9126 8.17512C24.7854 6.95991 23.2408 6.21539 21.588 6.09066L21.3306 6.07066ZM21.3333 12.6667C21.7753 12.6667 22.1992 12.8423 22.5118 13.1548C22.8244 13.4674 23 13.8913 23 14.3333C23 14.7754 22.8244 15.1993 22.5118 15.5118C22.1992 15.8244 21.7753 16 21.3333 16C20.8913 16 20.4673 15.8244 20.1548 15.5118C19.8422 15.1993 19.6666 14.7754 19.6666 14.3333C19.6666 13.8913 19.8422 13.4674 20.1548 13.1548C20.4673 12.8423 20.8913 12.6667 21.3333 12.6667ZM16 12.6667C16.442 12.6667 16.8659 12.8423 17.1785 13.1548C17.491 13.4674 17.6666 13.8913 17.6666 14.3333C17.6666 14.7754 17.491 15.1993 17.1785 15.5118C16.8659 15.8244 16.442 16 16 16C15.5579 16 15.134 15.8244 14.8214 15.5118C14.5089 15.1993 14.3333 14.7754 14.3333 14.3333C14.3333 13.8913 14.5089 13.4674 14.8214 13.1548C15.134 12.8423 15.5579 12.6667 16 12.6667ZM12.3333 14.3333C12.3333 13.8913 12.1577 13.4674 11.8451 13.1548C11.5326 12.8423 11.1087 12.6667 10.6666 12.6667C10.2246 12.6667 9.80067 12.8423 9.48812 13.1548C9.17555 13.4674 8.99996 13.8913 8.99996 14.3333C8.99996 14.7754 9.17555 15.1993 9.48812 15.5118C9.80067 15.8244 10.2246 16 10.6666 16C11.1087 16 11.5326 15.8244 11.8451 15.5118C12.1577 15.1993 12.3333 14.7754 12.3333 14.3333Z"
+								fill="white"
+							/>
+						</svg>
+					</div>
+					<img class="accepted-modal__avatar" src="./images/skyp2.png" />
+					<p class="accepted-modal__name">Crunchycat</p>
+					<p class="accepted-modal__time">00:00</p>
+					<div class="accepted-modal__btns">
+						<button class="accepted-modal__voice">
+							<svg
+								width="23"
+								height="31"
+								viewBox="0 0 23 31"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M11.5 0C12.8071 0 14.0607 0.515694 14.985 1.43364C15.9093 2.35158 16.4286 3.59657 16.4286 4.89474V14.6842C16.4286 15.9824 15.9093 17.2274 14.985 18.1453C14.0607 19.0633 12.8071 19.5789 11.5 19.5789C10.1929 19.5789 8.93926 19.0633 8.01497 18.1453C7.09069 17.2274 6.57143 15.9824 6.57143 14.6842V4.89474C6.57143 3.59657 7.09069 2.35158 8.01497 1.43364C8.93926 0.515694 10.1929 0 11.5 0ZM23 14.6842C23 20.4437 18.7121 25.1916 13.1429 25.9911V31H9.85714V25.9911C4.28786 25.1916 0 20.4437 0 14.6842H3.28571C3.28571 16.8478 4.15115 18.9228 5.69162 20.4527C7.2321 21.9826 9.32144 22.8421 11.5 22.8421C13.6786 22.8421 15.7679 21.9826 17.3084 20.4527C18.8489 18.9228 19.7143 16.8478 19.7143 14.6842H23Z"
+									fill="white"
+								/>
+							</svg>
+						</button>
+						<button class="accepted-modal__plus">
+							<svg
+								width="30"
+								height="30"
+								viewBox="0 0 30 30"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+							>
+								<path
+									d="M1 15H29M15 29V1"
+									stroke="white"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+								/>
+							</svg>
+						</button>
+						<button
+							class="accepted-modal__end modal__end"
+							onclick="closeModal()"
+						>
+							<img src="./images/end.png" alt="" />
+						</button>
+					</div>
+				</div>
+			</div>
+		</dialog>
+		<dialog class="robot-dialog">
+			<button class="robot-dialog__close" onclick="closeModalRobot()">
+				<svg
+					width="16"
+					height="16"
+					viewBox="0 0 16 16"
+					fill="none"
+					xmlns="http://www.w3.org/2000/svg"
+				>
+					<g clip-path="url(#clip0_1_274)">
+						<path
+							d="M15.854 12.8541L11 8.00008L15.854 3.14608C15.947 3.05193 15.9991 2.92492 15.9991 2.79258C15.9991 2.66023 15.947 2.53322 15.854 2.43908L13.561 0.146076C13.5146 0.0995436 13.4595 0.0626219 13.3988 0.0374289C13.3382 0.012236 13.2731 -0.000732422 13.2075 -0.000732422C13.1418 -0.000732422 13.0767 0.012236 13.0161 0.0374289C12.9554 0.0626219 12.9003 0.0995436 12.854 0.146076L7.99995 5.00008L3.14595 0.146076C3.05219 0.0523407 2.92504 -0.000317003 2.79245 -0.000317003C2.65987 -0.000317003 2.53272 0.0523407 2.43895 0.146076L0.145954 2.43908C0.0994215 2.48544 0.0624998 2.54053 0.0373069 2.60119C0.0121139 2.66185 -0.000854492 2.72689 -0.000854492 2.79258C-0.000854492 2.85826 0.0121139 2.9233 0.0373069 2.98396C0.0624998 3.04462 0.0994215 3.09972 0.145954 3.14608L4.99995 8.00008L0.145954 12.8541C0.0522186 12.9478 -0.000439073 13.075 -0.000439073 13.2076C-0.000439073 13.3402 0.0522186 13.4673 0.145954 13.5611L2.43895 15.8541C2.48531 15.9006 2.54041 15.9375 2.60107 15.9627C2.66173 15.9879 2.72677 16.0009 2.79245 16.0009C2.85814 16.0009 2.92318 15.9879 2.98384 15.9627C3.0445 15.9375 3.09959 15.9006 3.14595 15.8541L7.99995 11.0001L12.854 15.8541C12.9477 15.9478 13.0749 16.0005 13.2075 16.0005C13.34 16.0005 13.4672 15.9478 13.561 15.8541L15.854 13.5611C15.9005 13.5147 15.9374 13.4596 15.9626 13.399C15.9878 13.3383 16.0008 13.2733 16.0008 13.2076C16.0008 13.1419 15.9878 13.0769 15.9626 13.0162C15.9374 12.9555 15.9005 12.9004 15.854 12.8541Z"
+							fill="white"
+						/>
+					</g>
+					<defs>
+						<clipPath id="clip0_1_274">
+							<rect width="16" height="16" fill="white" />
+						</clipPath>
+					</defs>
+				</svg>
+			</button>
+			<img src="./images/cat-robot.png" alt="" class="robot-dialog__cat" />
+			<div class="robot-dialog__body">
+				Congratulations you're <br />
+				not a robot, live with it.
+			</div>
+		</dialog>
+		<header class="header">
+			<div class="container">
+				<div class="header__body">
+					<a href="/" class="header__logo">
+						<img src="./images/logo.png" alt="" class="header__logo-img" />
+						<p class="header__logo-text">crunchycat.net</p>
+					</a>
+					<div class="header__right">
+						<div class="header__btns">
+							<button class="btn">BUY NOW</button>
+							<button class="btn btn--green">CHARTS</button>
+						</div>
+						<div class="header__menu menu">
+							<nav class="menu__body">
+								<ul class="menu__list">
+									<li>
+										<a href="" data-goto-section="#" class="menu__link">
+											Home
+										</a>
+									</li>
+									<li>
+										<a href="" data-goto-section="#about" class="menu__link">
+											About
+										</a>
+									</li>
+									<li>
+										<a href="" data-goto-section="#token" class="menu__link">
+											Tokenomics
+										</a>
+									</li>
+									<li>
+										<a
+											href=""
+											data-goto-section="#community"
+											class="menu__link"
+										>
+											Community
+										</a>
+									</li>
+									<li>
+										<a href="" data-goto-section="#doc" class="menu__link">
+											Documentation
+										</a>
+									</li>
+								</ul>
+							</nav>
+							<button class="btn btn--orange menu__icon icon-menu">
+								BUY NOW
+							</button>
+						</div>
+						<div class="header__bottom">A very strange cat - Home</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="container">
+			<div class="wrapper">
+				<aside class="aside" data-da="intro,4,992">
+					<p class="aside__title">
+						<span>Who's there?</span><br />
+						I'm the jolly cat.
+					</p>
+					<div class="aside__img">
+						<img src="./images/cat1.jpg" alt="" />
+						<img src="./images/cat2.jpg" alt="" />
+						<img src="./images/cat3.jpg" alt="" />
+						<img src="./images/cat4.jpg" alt="" />
+						<img src="./images/cat5.jpg" alt="" />
+						<img src="./images/cat6.jpg" alt="" />
+						<img src="./images/cat7.jpg" alt="" />
+						<img src="./images/cat8.jpg" alt="" />
+						<img src="./images/cat9.jpg" alt="" />
+						<img src="./images/cat10.jpg" alt="" />
+						<img src="./images/cat11.jpg" alt="" />
+						<img src="./images/cat12.jpg" alt="" />
+						<img src="./images/cat13.jpg" alt="" />
+						<img src="./images/cat14.jpg" alt="" />
+						<img src="./images/cat15.jpg" alt="" />
+						<img src="./images/cat16.jpg" alt="" />
+					</div>
+				</aside>
+				<main class="main">
+					<section class="sub-header">
+						<div class="sub-header__what">What?</div>
+						<ul class="sub-header__menu">
+							<li class="sub-header__item">A short</li>
+							<li class="sub-header__item">description</li>
+							<li class="sub-header__item">of my life</li>
+						</ul>
+					</section>
+					<section class="section intro" id="about">
+						<div class="intro__header">
+							<h2 class="section__title">
+								Crunchycat $Luna powered by solana.
+							</h2>
+							<div class="intro__links">
+								<a href="" class="intro__link">
+									<img src="./images/telegram.png" alt="" />
+								</a>
+								<a href="" class="intro__link">
+									<img src="./images/x.png" alt="" />
+								</a>
+							</div>
+						</div>
+						<div class="intro__body">
+							<img src="./images/cat-green.jpg" alt="" />
+							<p>
+								<span>I’m Luna, a 4 year old girl!</span>
+								<span
+									>I've become a popular internet meme, but why am I not on
+									solana yet?
+								</span>
+								<span>
+									It's time to hype, today I'm tokenizing and each of you can
+									have a little bit of hype. Meow
+								</span>
+							</p>
+						</div>
+						<audio controls class="intro__audio">
+							<source src="./audio/1.mp3" type="audio/mp3" />
+							<source src="./audio/1.wav" type="audio/wav" />
+							Your browser does not support the audio element.
+						</audio>
+					</section>
+					<section class="section everybody">
+						<h2 class="section__title">Everybody knows me</h2>
+						<video src="./video/1.mov" width="100%" controls></video>
+					</section>
+					<section class="section tokenomics" id="token">
+						<h2 class="section__title">Tokenomics</h2>
+						<div class="tokenomics__row">Symbol - $Luna</div>
+						<div class="tokenomics__row">Total Supply: 1,000,000,000</div>
+						<div class="tokenomics__row">
+							Token Address: 79UQJKQJ3R1SMKXTY6BFLJZNW5HH4ZIJLA3JRKQYEXDG
+							<button class="tokenomics__copy">
+								<svg
+									width="16"
+									height="18"
+									viewBox="0 0 16 18"
+									fill="none"
+									xmlns="http://www.w3.org/2000/svg"
+								>
+									<rect
+										x="3.07141"
+										y="0.5"
+										width="11.8571"
+										height="14.4286"
+										stroke="black"
+									/>
+									<rect
+										x="0.5"
+										y="3.07141"
+										width="11.8571"
+										height="14.4286"
+										stroke="black"
+									/>
+								</svg>
+							</button>
+						</div>
+						<div class="tokenomics__row">No taxes</div>
+						<div class="tokenomics__row">No bullshit</div>
+						<div class="tokenomics__row">LP burned</div>
+						<div class="tokenomics__btns">
+							<button class="btn">BUY NOW</button>
+							<button class="btn btn--green">CHARTS</button>
+						</div>
+					</section>
+					<section class="section social">
+						<a href="" class="social__link">My Instagram</a>
+						<a href="" class="social__link">My TikTok</a>
+					</section>
+					<section class="section social-mobile">
+						<a href="" class="social-mobile__link">My Instagram</a>
+						<img src="./images/inst.jpg" alt="" class="inst__img" />
+
+						<a href="" class="social-mobile__link">My TikTok</a>
+						<img src="./images/tik.jpg" alt="" class="inst__img" />
+					</section>
+					<section class="section inst">
+						<img src="./images/inst1.jpg" alt="" class="inst__img" />
+						<img src="./images/inst2.jpg" alt="" class="inst__img" />
+					</section>
+					<section class="section news" id="community">
+						<a href="" class="news__link">BREAKING NEWS</a>
+					</section>
+					<div class="news-mobile-img"></div>
+					<section class="section news-img">
+						<img src="./images/news.jpg" alt="" class="news-img__img" />
+						<audio controls class="intro__audio">
+							<source src="./audio/1.mp3" type="audio/mp3" />
+							<source src="./audio/1.wav" type="audio/wav" />
+							Your browser does not support the audio element.
+						</audio>
+					</section>
+					<aside class="aside">
+						<div class="aside__img aside-mobile-img-cat">
+							<img src="./images/cat1.jpg" alt="" />
+							<img src="./images/cat2.jpg" alt="" />
+							<img src="./images/cat3.jpg" alt="" />
+							<img src="./images/cat4.jpg" alt="" />
+							<img src="./images/cat5.jpg" alt="" />
+							<img src="./images/cat6.jpg" alt="" />
+							<img src="./images/cat7.jpg" alt="" />
+							<img src="./images/cat8.jpg" alt="" />
+							<img src="./images/cat9.jpg" alt="" />
+							<img src="./images/cat10.jpg" alt="" />
+							<img src="./images/cat11.jpg" alt="" />
+							<img src="./images/cat12.jpg" alt="" />
+							<img src="./images/cat13.jpg" alt="" />
+							<img src="./images/cat14.jpg" alt="" />
+							<img src="./images/cat15.jpg" alt="" />
+							<img src="./images/cat16.jpg" alt="" />
+						</div>
+					</aside>
+					<section class="section game">
+						<a href="" class="game__link">Mini game</a>
+					</section>
+					<section class="section fit">
+						<h2 class="section__title section__title--not-title">
+							Feed me whatever you see fit
+						</h2>
+						<div class="fit__body">
+							<div class="fit__grid">
+								<div class="fit__row">
+									<img src="./images/fit1.jpg" alt="" />
+									<span>nuclear uranium</span>
+								</div>
+								<div class="fit__row">
+									<img src="./images/fit2.jpg" alt="" />
+									<span>some rocks</span>
+								</div>
+								<div class="fit__row">
+									<img src="./images/fit3.jpg" alt="" />
+									<span>some coffee</span>
+								</div>
+								<div class="fit__row">
+									<img src="./images/fit4.jpg" alt="" />
+									<span>some solana</span>
+								</div>
+							</div>
+							<img src="./images/fit.jpg" class="fit__img" />
+						</div>
+					</section>
+
+					<section class="section comment">
+						<a href="" class="comment__link">Add a comment</a>
+					</section>
+					<section class="section comments">
+						<div class="comments__row">
+							<div class="comments__img">
+								<img src="./images/comment.jpg" alt="" />
+							</div>
+							<div class="comments__header">
+								<p class="comments__title">Don't doggie coine.</p>
+								<p class="comments__date">
+									Friday, January 11, 2024, 10:43 a.m.#
+								</p>
+							</div>
+							<p class="comments__comment">
+								I don't like cats, but this one's funny.
+							</p>
+							<button class="comments__reply">quote</button>
+						</div>
+						<div class="comments__row">
+							<div class="comments__img">
+								<img src="./images/comment.jpg" alt="" />
+							</div>
+							<div class="comments__header">
+								<p class="comments__title">Aubrey Drake</p>
+								<p class="comments__date">
+									Friday, January 11, 2024, 10:43 a.m.#
+								</p>
+							</div>
+							<p class="comments__comment">
+								Everything's great, but where's the hat?????
+							</p>
+							<button class="comments__reply">quote</button>
+						</div>
+						<div class="comments__row">
+							<div class="comments__img">
+								<img src="./images/comment.jpg" alt="" />
+							</div>
+							<div class="comments__header">
+								<p class="comments__title">Black Lotus</p>
+								<p class="comments__date">
+									Friday, January 11, 2024, 10:43 a.m.#
+								</p>
+							</div>
+							<p class="comments__comment">
+								This is not a token it's something, I see you on instagram and
+								tiktok thank god now on solana.
+							</p>
+							<button class="comments__reply">quote</button>
+						</div>
+						<div class="comments__row">
+							<div class="comments__img">
+								<img src="./images/comment.jpg" alt="" />
+							</div>
+							<div class="comments__header">
+								<p class="comments__title">
+									The legs of the aunt from Jerry's volume
+								</p>
+								<p class="comments__date">
+									Friday, January 11, 2024, 10:43 a.m.#
+								</p>
+							</div>
+							<p class="comments__comment">
+								I've been walking around, so I need you to tell me how to feed
+								this cat solana.
+							</p>
+							<button class="comments__reply">quote</button>
+						</div>
+						<div class="comments__row">
+							<div class="comments__img">
+								<img src="./images/comment.jpg" alt="" />
+							</div>
+							<div class="comments__header">
+								<p class="comments__title">Bong | Bonk’s Brother</p>
+								<p class="comments__date">
+									Friday, January 11, 2024, 10:43 a.m.#
+								</p>
+							</div>
+							<p class="comments__comment">
+								Pussy, call me, I want to get high with you.
+							</p>
+							<button class="comments__reply">quote</button>
+						</div>
+						<div class="comments__btns">
+							<button class="btn">BUY NOW</button>
+							<button class="btn btn--green">CHARTS</button>
+						</div>
+					</section>
+					<section class="section comic">
+						<h2 class="section__title section__title--not-title">
+							See the entire comic in the gitbook......
+						</h2>
+						<img src="./images/comic.jpg" alt="" />
+					</section>
+					<footer class="section footer">
+						<p class="footer__text">
+							Gitbook <br />
+							Roadmap<br />
+							Documentation
+						</p>
+						<p class="footer__copy">• 2024 © • Luna • All Rights Reserved</p>
+						<div class="footer__links">
+							<a href="" class="footer__link">
+								<img src="./images/telegram.png" alt="" />
+							</a>
+							<a href="" class="footer__link">
+								<img src="./images/x.png" alt="" />
+							</a>
+						</div>
+					</footer>
+				</main>
+				<aside class="aside">
+					<button
+						class="aside__robot"
+						data-da="intro,3,992"
+						onclick="openModalRobot()"
+					>
+						<img src="./images/robot.png" width="100%" alt="" />
+					</button>
+					<p class="aside__title">l am a <span>$Luna</span></p>
+					<div class="aside__right-img" data-da="news-mobile-img,last,992">
+						<img src="./images/news1.jpg" alt="" />
+						<img src="./images/news2.jpg" alt="" />
+						<img src="./images/news3.jpg" alt="" />
+						<img src="./images/news4.jpg" alt="" />
+						<img src="./images/news5.jpg" alt="" />
+						<img src="./images/news6.jpg" alt="" />
+					</div>
+				</aside>
+			</div>
+		</div>
+		<div class="aside__img aside-bottom-mobile">
+			<img src="./images/cat1.jpg" alt="" />
+			<img src="./images/cat2.jpg" alt="" />
+			<img src="./images/cat3.jpg" alt="" />
+			<img src="./images/cat4.jpg" alt="" />
+			<img src="./images/cat5.jpg" alt="" />
+			<img src="./images/cat6.jpg" alt="" />
+			<img src="./images/cat7.jpg" alt="" />
+			<img src="./images/cat8.jpg" alt="" />
+			<img src="./images/cat9.jpg" alt="" />
+			<img src="./images/cat10.jpg" alt="" />
+			<img src="./images/cat11.jpg" alt="" />
+			<img src="./images/cat12.jpg" alt="" />
+			<img src="./images/cat13.jpg" alt="" />
+			<img src="./images/cat14.jpg" alt="" />
+			<img src="./images/cat15.jpg" alt="" />
+			<img src="./images/cat16.jpg" alt="" />
+		</div>
+		<script src="./js/dynamic.js"></script>
+		<script src="./js/index.js"></script>
+	</body>
+</html>
