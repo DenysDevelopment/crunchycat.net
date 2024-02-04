@@ -16,6 +16,7 @@
 	</head>
 	<body>
 		<!-- <img src="./images/cursor.png" alt="" class="cursor" /> -->
+
 		<dialog class="modal" id="modal">
 			<div class="modal__header">
 				<img src="./images/skype.png" alt="" class="modal__icon" />
@@ -61,10 +62,11 @@
 				<p class="modal__name">Crunchycat</p>
 				<p class="modal__incoming">Incoming call...</p>
 				<div class="modal__btns">
-					<button class="modal__end modal--accept">
+					<button class="modal__end modal--end">
 						<img src="./images/end.png" alt="" />
 					</button>
 					<button class="modal__accept modal--accept">
+						<img class="modal__lap" src="./images/lap.png" alt="" />
 						<img src="./images/accept.png" alt="" />
 					</button>
 					<button class="modal__video modal--accept">
@@ -151,7 +153,11 @@
 							/>
 						</svg>
 					</div>
-					<img class="accepted-modal__avatar" src="./images/skyp2.png" />
+					<video
+						src="./video/call.mp4"
+						loop
+						class="accepted-modal__avatar"
+					></video>
 					<p class="accepted-modal__name">Crunchycat</p>
 					<p class="accepted-modal__time">00:00</p>
 					<div class="accepted-modal__btns">
@@ -304,6 +310,24 @@
 						<img src="./images/cat15.jpg" alt="" />
 						<img src="./images/cat16.jpg" alt="" />
 					</div>
+					<marquee class="aside__img aside__img--mobile">
+						<img src="./images/cat1.jpg" alt="" />
+						<img src="./images/cat2.jpg" alt="" />
+						<img src="./images/cat3.jpg" alt="" />
+						<img src="./images/cat4.jpg" alt="" />
+						<img src="./images/cat5.jpg" alt="" />
+						<img src="./images/cat6.jpg" alt="" />
+						<img src="./images/cat7.jpg" alt="" />
+						<img src="./images/cat8.jpg" alt="" />
+						<img src="./images/cat9.jpg" alt="" />
+						<img src="./images/cat10.jpg" alt="" />
+						<img src="./images/cat11.jpg" alt="" />
+						<img src="./images/cat12.jpg" alt="" />
+						<img src="./images/cat13.jpg" alt="" />
+						<img src="./images/cat14.jpg" alt="" />
+						<img src="./images/cat15.jpg" alt="" />
+						<img src="./images/cat16.jpg" alt="" />
+					</marquee>
 				</aside>
 				<main class="main">
 					<section class="sub-header">
@@ -329,7 +353,7 @@
 							</div>
 						</div>
 						<div class="intro__body">
-							<img src="./images/cat-green.jpg" alt="" />
+							<img src="./images/cat-green.gif" alt="" />
 							<p>
 								<span>I’m Luna, a 4 year old girl!</span>
 								<span
@@ -357,7 +381,9 @@
 						<div class="tokenomics__row">Symbol - $Luna</div>
 						<div class="tokenomics__row">Total Supply: 1,000,000,000</div>
 						<div class="tokenomics__row">
-							Token Address: 79UQJKQJ3R1SMKXTY6BFLJZNW5HH4ZIJLA3JRKQYEXDG
+							Token Address:
+							<span>79UQJKQJ3R1SMKXTY6BFLJZNW5HH4ZIJLA3JRKQYEXDG</span>
+							<div class="tokenomics__alert">Copied</div>
 							<button class="tokenomics__copy">
 								<svg
 									width="16"
@@ -392,14 +418,30 @@
 						</div>
 					</section>
 					<section class="section social">
-						<a href="" class="social__link">My Instagram</a>
-						<a href="" class="social__link">My TikTok</a>
+						<a
+							href="Instagram - https://www.instagram.com/monkeycatluna/?hl=ru&ref=snkrhd-blog"
+							class="social__link"
+							>My Instagram</a
+						>
+						<a
+							href="Tik TOK - https://www.tiktok.com/@monkeycatluna/video/7307441496515431712"
+							class="social__link"
+							>My TikTok</a
+						>
 					</section>
 					<section class="section social-mobile">
-						<a href="" class="social-mobile__link">My Instagram</a>
+						<a
+							href="Instagram - https://www.instagram.com/monkeycatluna/?hl=ru&ref=snkrhd-blog"
+							class="social-mobile__link"
+							>My Instagram</a
+						>
 						<img src="./images/inst.jpg" alt="" class="inst__img" />
 
-						<a href="" class="social-mobile__link">My TikTok</a>
+						<a
+							href="Tik TOK - https://www.tiktok.com/@monkeycatluna/video/7307441496515431712"
+							class="social-mobile__link"
+							>My TikTok</a
+						>
 						<img src="./images/tik.jpg" alt="" class="inst__img" />
 					</section>
 					<section class="section inst">
@@ -447,24 +489,27 @@
 						</h2>
 						<div class="fit__body">
 							<div class="fit__grid">
-								<div class="fit__row">
+								<div class="fit__row" data-img="1">
 									<img src="./images/fit1.jpg" alt="" />
 									<span>nuclear uranium</span>
 								</div>
-								<div class="fit__row">
+								<div class="fit__row" data-img="2">
 									<img src="./images/fit2.jpg" alt="" />
 									<span>some rocks</span>
 								</div>
-								<div class="fit__row">
+								<div class="fit__row" data-img="3">
 									<img src="./images/fit3.jpg" alt="" />
 									<span>some coffee</span>
 								</div>
-								<div class="fit__row">
+								<div class="fit__row" data-img="4">
 									<img src="./images/fit4.jpg" alt="" />
 									<span>some solana</span>
 								</div>
 							</div>
-							<img src="./images/fit.jpg" class="fit__img" />
+							<div class="fit__images">
+								<video class="fit__video" width="100%"></video>
+								<img src="./images/fit.jpg" class="fit__img" />
+							</div>
 						</div>
 					</section>
 
@@ -477,13 +522,13 @@
 								<img src="./images/comment.jpg" alt="" />
 							</div>
 							<div class="comments__header">
-								<p class="comments__title">Don't doggie coine.</p>
+								<p class="comments__title">@dogwifcoin</p>
 								<p class="comments__date">
 									Friday, January 11, 2024, 10:43 a.m.#
 								</p>
 							</div>
 							<p class="comments__comment">
-								I don't like cats, but this one's funny.
+								We sent you a hat by post, now you're in our club.
 							</p>
 							<button class="comments__reply">quote</button>
 						</div>
@@ -492,13 +537,14 @@
 								<img src="./images/comment.jpg" alt="" />
 							</div>
 							<div class="comments__header">
-								<p class="comments__title">Aubrey Drake</p>
+								<p class="comments__title">@SBF_FTX</p>
 								<p class="comments__date">
 									Friday, January 11, 2024, 10:43 a.m.#
 								</p>
 							</div>
 							<p class="comments__comment">
-								Everything's great, but where's the hat?????
+								I need to gnaw through some prison barriers, is payment in FTX
+								tokens acceptable?
 							</p>
 							<button class="comments__reply">quote</button>
 						</div>
@@ -507,14 +553,13 @@
 								<img src="./images/comment.jpg" alt="" />
 							</div>
 							<div class="comments__header">
-								<p class="comments__title">Black Lotus</p>
+								<p class="comments__title">@Austin_Federa</p>
 								<p class="comments__date">
 									Friday, January 11, 2024, 10:43 a.m.#
 								</p>
 							</div>
 							<p class="comments__comment">
-								This is not a token it's something, I see you on instagram and
-								tiktok thank god now on solana.
+								Hello, would you like to meet my cat Elote?
 							</p>
 							<button class="comments__reply">quote</button>
 						</div>
@@ -523,31 +568,29 @@
 								<img src="./images/comment.jpg" alt="" />
 							</div>
 							<div class="comments__header">
-								<p class="comments__title">
-									The legs of the aunt from Jerry's volume
-								</p>
-								<p class="comments__date">
-									Friday, January 11, 2024, 10:43 a.m.#
-								</p>
-							</div>
-							<p class="comments__comment">
-								I've been walking around, so I need you to tell me how to feed
-								this cat solana.
-							</p>
-							<button class="comments__reply">quote</button>
-						</div>
-						<div class="comments__row">
-							<div class="comments__img">
-								<img src="./images/comment.jpg" alt="" />
-							</div>
-							<div class="comments__header">
-								<p class="comments__title">Bong | Bonk’s Brother</p>
+								<p class="comments__title">@BongCoinSolana</p>
 								<p class="comments__date">
 									Friday, January 11, 2024, 10:43 a.m.#
 								</p>
 							</div>
 							<p class="comments__comment">
 								Pussy, call me, I want to get high with you.
+							</p>
+							<button class="comments__reply">quote</button>
+						</div>
+						<div class="comments__row">
+							<div class="comments__img">
+								<img src="./images/comment.jpg" alt="" />
+							</div>
+							<div class="comments__header">
+								<p class="comments__title">@dogecoin</p>
+								<p class="comments__date">
+									Friday, January 11, 2024, 10:43 a.m.#
+								</p>
+							</div>
+							<p class="comments__comment">
+								I don't really like cats, but this Luna is very cute. (I'm
+								afraid of her)
 							</p>
 							<button class="comments__reply">quote</button>
 						</div>
@@ -599,7 +642,11 @@
 				</aside>
 			</div>
 		</div>
-		<div class="aside__img aside-bottom-mobile">
+		<marquee
+			class="aside__img aside-bottom-mobile"
+			behavior="scroll"
+			direction="left"
+		>
 			<img src="./images/cat1.jpg" alt="" />
 			<img src="./images/cat2.jpg" alt="" />
 			<img src="./images/cat3.jpg" alt="" />
@@ -616,7 +663,7 @@
 			<img src="./images/cat14.jpg" alt="" />
 			<img src="./images/cat15.jpg" alt="" />
 			<img src="./images/cat16.jpg" alt="" />
-		</div>
+		</marquee>
 		<script src="./js/dynamic.js"></script>
 		<script src="./js/index.js"></script>
 	</body>

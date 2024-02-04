@@ -8,7 +8,15 @@
 const copy = document.querySelector('.tokenomics__copy')
 
 copy.addEventListener('click', () => {
+	document
+		.querySelector('.tokenomics__alert')
+		.classList.add('tokenomics__alert--active')
 	navigator.clipboard.writeText('79UQJKQJ3R1SMKXTY6BFLJZNW5HH4ZIJLA3JRKQYEXDG')
+	setTimeout(() => {
+		document
+			.querySelector('.tokenomics__alert')
+			.classList.remove('tokenomics__alert--active')
+	}, 1000)
 })
 
 document.body.style.cursor = 'url("../images/cursor.png"), auto'
@@ -59,6 +67,7 @@ function openModal() {
 
 function closeModal() {
 	document.getElementById('modal').removeAttribute('open')
+	document.querySelector('.accepted-modal__avatar').remove()
 }
 function changeModal() {
 	document
@@ -67,7 +76,19 @@ function changeModal() {
 	document
 		.querySelector('.modal__accepted')
 		.classList.add('accepted-modal--visible')
+	document.querySelector('.accepted-modal__avatar').play()
 }
+
+const endCall = () => {
+	document.querySelector('.modal__lap').classList.add('modal__lap--active')
+	setInterval(() => {
+		changeModal()
+		startStopwatch()
+	}, 1000)
+}
+
+document.querySelector('.modal--end').addEventListener('click', endCall)
+
 let stopwatchInterval
 let elapsedTime = 1
 let isRunning = false
@@ -125,3 +146,36 @@ function openModalRobot() {
 function closeModalRobot() {
 	document.querySelector('.robot-dialog').removeAttribute('open')
 }
+
+let body = document.body,
+	html = document.documentElement
+
+let height = Math.max(
+	body.scrollHeight,
+	body.offsetHeight,
+	html.clientHeight,
+	html.scrollHeight,
+	html.offsetHeight,
+)
+
+const header = document.querySelector('.header')
+if (header) {
+	if (height > 1500) {
+		window.addEventListener('scroll', e => {
+			if (window.pageYOffset > 200) {
+				header.classList.add('fixed')
+				document.body.style.paddingTop = `${header.offsetHeight}px`
+			} else {
+				header.classList.remove('fixed')
+				document.body.style.paddingTop = `0px`
+			}
+		})
+	}
+}
+
+document.querySelectorAll('[data-img]').forEach(img => {
+	img.addEventListener('click', () => {
+		document.querySelector('.fit__video').src = `./video/${img.dataset.img}.mp4`
+		document.querySelector('.fit__video').play()
+	})
+})
